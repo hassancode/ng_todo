@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html ng-app="todoApp">
+<head>
+
+	<title>My Todos</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<div ng-controller="mainController">
+		<ul>
+			<li ng-repeat="todo in todos">
+				{{ todo.text }}
+				<button class="btn btn-danger" ng-click="deleteTodo(todo._id)">Delete</button>
+			</li>
+
+		</ul>
+
+		<form>
+			<input type="text" ng-model="formData.text" placeholder="Add todo">
+			<input type="button"  class="btn btn-primary" value="Add Todo" ng-click="createTodo()">
+		</form>
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
